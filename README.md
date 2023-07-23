@@ -1,4 +1,4 @@
-# vite-plugin-string-replace
+# vite-plugin-code-replace
 
 [中文文档](./README_ZH-CN.md)
 
@@ -6,12 +6,12 @@
 
 1. install
 
-   `yarn add vite-plugin-string-replace -D`
+   `yarn add vite-plugin-code-replace -D`
 
 2. config `vite.config.ts`
 
 ```javascript
-import StringReplace from 'vite-plugin-string-replace'
+import StringReplace from 'vite-plugin-code-replace'
 
 defineConfig({
     plugins: [

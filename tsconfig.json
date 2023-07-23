@@ -1,20 +1,20 @@
 {
   "compilerOptions": {
-    "target": "ES2019",
-    "module": "CommonJS",
+    "target": "esnext",
+    "module": "esnext",
     "moduleResolution": "node",
+    "skipLibCheck": true,
     "strict": true,
-    "jsx": "preserve",
-    "sourceMap": true,
+    "strictNullChecks": true,
+    "noLib": false,
+    "allowSyntheticDefaultImports": true, // https://www.typescriptlang.org/tsconfig#allowSyntheticDefaultImports
+    "strictFunctionTypes": false,
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "lib": ["esnext", "dom"],
-    "types": ["vite/client"],
-    "declaration": true,
-    "skipLibCheck": true
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "lib": ["dom", "esnext"],
+    "noImplicitAny": true,
+    "removeComments": true,
   },
-  "include": [
-    "src/**/*.ts"
-  ],
-  "exclude": ["vite.config.ts"]
 }

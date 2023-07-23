@@ -1,15 +1,15 @@
-# vite-plugin-string-replace
+# vite-plugin-code-replace
 
 ## 使用方法
 
 1. install
 
-   `yarn add vite-plugin-string-replace -D`
+   `yarn add vite-plugin-code-replace -D`
 
 2. 配置 `vite.config.ts`
 
 ```javascript
-import StringReplace from 'vite-plugin-string-replace'
+import StringReplace from 'vite-plugin-code-replace'
 
 defineConfig({
   plugins: [

@@ -1,38 +1,86 @@
 {
-  "name": "vite-plugin-string-replace",
-  "version": "1.1.0",
-  "author": "Windson",
-  "license": "MIT",
-    "main": "./dist/index.js",
-    "module": "./dist/index.mjs",
-    "types": "./dist/index.d.ts",
-    "exports": {
-      ".": {
-        "require": "./dist/index.js",
-        "import": "./dist/index.mjs"
-      }
-    },
+  "name": "vite-plugin-code-replace",
+  "type": "module",
+  "version": "0.0.1",
+  "packageManager": "pnpm@7.11.0",
+  "description": "A vite plugin that replaces code strings",
+  "author": "Sam Xu <twonian@qq.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/windsonR/vite-plugin-string-replace.git"
+    "url": "git+ssh://git@github.com:didengren/utils.git"
   },
   "bugs": {
-    "url": "https://github.com/windsonR/vite-plugin-string-replace/issues"
+    "url": "https://github.com/didengren/utils/issues"
   },
+  "homepage": "https://github.com/didengren/utils#readme",
+  "license": "MIT",
+  "keywords": [
+    "vite",
+    "plugin",
+    "replace",
+    "string-replace"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "*.d.ts"
+  ],
   "scripts": {
-    "build": "tsup",
-    "test:dev": "vite",
-    "test:build": "vite build"
+    "start": "esno src/index.ts",
+    "dev": "tsup src/index.ts --watch src",
+    "build": "tsup src/index.ts --dts --format cjs,esm --target es5 --splitting --clean",
+    "lint": "eslint --cache --max-warnings 100 \"src/**/*.ts\" --fix",
+    "format": "prettier --write \"src/**/*.{ts,json,css,less,scss,md}\"",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
+    "release": "bumpp --commit --push --tag && pnpm publish --access public"
+  },
+  "dependencies": {
+    "@rollup/pluginutils": "^5.0.2",
+    "magic-string": "^0.30.1"
   },
   "devDependencies": {
-    "@types/node": "^14.0.14",
-    "magic-string": "^0.27.0",
-    "rollup": "^3.10.1",
-    "tsup": "^6.5.0",
-    "typescript": "^4.1.2",
-    "vite": "^4.0.0"
+    "@swc/core": "^1.3.70",
+    "@types/node": "16.11.12",
+    "@typescript-eslint/eslint-plugin": "5.20.0",
+    "@typescript-eslint/parser": "5.20.0",
+    "@vitest/coverage-c8": "^0.25.1",
+    "bumpp": "^8.2.1",
+    "commitizen": "^4.2.5",
+    "cz-customizable": "^7.0.0",
+    "eslint": "8.13.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-define-config": "1.2.0",
+    "eslint-plugin-prettier": "4.0.0",
+    "esno": "^0.16.3",
+    "happy-dom": "^7.6.7",
+    "prettier": "2.6.2",
+    "tsup": "^6.4.0",
+    "typescript": "4.8.4",
+    "vitest": "^0.25.1"
   },
-  "files": [
-    "dist"
-  ]
+  "peerDependenciesMeta": {
+    "ali-oss": {
+      "optional": true
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": ".cz-config.cjs"
+    }
+  }
 }
