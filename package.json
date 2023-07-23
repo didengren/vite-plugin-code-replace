@@ -1,18 +1,18 @@
 {
   "name": "vite-plugin-code-replace",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "packageManager": "pnpm@7.11.0",
   "description": "A vite plugin that replaces code strings",
   "author": "Sam Xu <twonian@qq.com>",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:didengren/utils.git"
+    "url": "git+ssh://git@github.com:didengren/vite-plugin-code-replace.git"
   },
   "bugs": {
-    "url": "https://github.com/didengren/utils/issues"
+    "url": "https://github.com/didengren/vite-plugin-code-replace/issues"
   },
-  "homepage": "https://github.com/didengren/utils#readme",
+  "homepage": "https://github.com/didengren/vite-plugin-code-replace#readme",
   "license": "MIT",
   "keywords": [
     "vite",
